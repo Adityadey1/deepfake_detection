@@ -1,0 +1,18 @@
+{
+  "real": {
+    "train": 56000,
+    "val": 7000,
+    "test": 7000
+  },
+  "fake": {
+    "train": 56000,
+    "val": 7000,
+    "test": 7000
+  },
+  "custom_unseen_reserved": 0,
+  "total": {
+    "train": 112000,
+    "val": 14000,
+    "test": 14000
+  }
+}

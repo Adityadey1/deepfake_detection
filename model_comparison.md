@@ -1,0 +1,5 @@
+| model        |   test_loss |   test_acc |   test_auc |   unseen_loss |   unseen_acc |   unseen_auc |
+|:-------------|------------:|-----------:|-----------:|--------------:|-------------:|-------------:|
+| efficientnet |      0.1756 |      0.928 |     0.9825 |           nan |          nan |          nan |
+| resnet       |      0.3624 |      0.869 |     0.9536 |           nan |          nan |          nan |
+| mobilenet    |      1.4636 |      0.536 |     0.8077 |           nan |          nan |          nan |
