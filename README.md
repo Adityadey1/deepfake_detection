@@ -4,34 +4,62 @@
 
 ---
 
-##  Project Overview
-This project detects whether a face image is **real** or **AI-generated**.  
-It was developed as part of an AI coursework assignment, where the requirement was:
 
- Use a Kaggle dataset  
- Add **custom self-generated data**  
- Train a machine learning model  
- Evaluate whether the model can detect the custom data  
- Compare accuracy across multiple models  
+## 📌 Project Overview
 
-This repository fulfills all those requirements with a clean, reproducible pipeline.
+This project focuses on detecting whether a face image is **real** or **AI-generated (fake)** using deep learning and transfer learning techniques.
 
 ---
 
-## Goals of the Project
-- Classify human face images as **Real** or **Fake**
-- Extend dataset using **custom AI-generated fake faces**
-- Train multiple deep learning models:
-  - EfficientNetB0  
-  - ResNet50  
-  - MobileNetV2  
-- Compare accuracy, loss, and AUC scores
-- Evaluate model generalization using **unseen custom fake images**
+## 🎯 Goals of the Project
+
+- Classify face images as **Real** or **Fake**
+- Extend the dataset using **custom AI-generated fake faces**
+- Train and compare multiple CNN architectures:
+  - **EfficientNetB0**
+  - **ResNet50**
+  - **MobileNetV2**
+- Evaluate performance using:
+  - Accuracy
+  - Loss
+  - AUC (Area Under Curve)
+- Test **generalization** on a completely different dataset (cross-dataset evaluation)
 
 ---
 
-## Dataset Sources
+## 📂 Dataset Sources
 
-### **Kaggle Dataset**
-**Real vs Fake Faces Dataset**  
-https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces  
+### 🔹 Dataset-A (Training Dataset)
+**Real vs Fake Faces Dataset (Kaggle)**  
+🔗 https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces  
+
+- 70,000 real images  
+- 70,000 fake images  
+- Automatically split into:
+  - Train
+  - Validation
+  - Test  
+- Balanced class distribution
+
+---
+
+### 🔹 Custom Fake Dataset
+Custom AI-generated face images were created using:
+- **Gemini Image Generation API**
+
+These images were:
+- NOT included in Kaggle dataset
+- Used for **unseen evaluation**
+- Helpful for testing real-world robustness
+
+---
+
+### 🔹 Dataset-B (Cross-Dataset Evaluation)
+**Real and Fake Face Detection Dataset (Kaggle)**  
+🔗 https://www.kaggle.com/datasets/ciplab/real-and-fake-face-detection  
+
+- Used **only for testing**
+- Never used during training
+- Helps analyze **domain shift & generalization**
+
+
