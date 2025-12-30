@@ -1,1 +1,100 @@
+** DeepFake Detection Lite – Project Explanation **
+1. The Problem:
 
+With the rapid advancement of artificial intelligence, AI-generated face images (deepfakes) have become increasingly realistic. These images can be misused for identity fraud, misinformation, impersonation, and social engineering attacks. Traditional visual inspection is no longer reliable, as modern AI-generated faces closely resemble real human faces.
+The core problem addressed in this project is how to automatically detect whether a given face image is real or AI-generated, especially when fake images are becoming more realistic over time.
+
+2. How This Project Helps: 
+
+This project helps in understanding: 
+How deep learning models can be used to detect fake images. The difference between high accuracy on known data and poor performance on unseen data. The concept of domain shift, which is a major real-world AI challenge
+The project demonstrates that even highly accurate models may fail in real-world scenarios if they are trained on limited or biased datasets. This insight is valuable for cybersecurity, digital forensics, and AI safety research.
+
+3. What I Built & How I Built It: 
+
+I built an end-to-end DeepFake detection pipeline using deep learning and transfer learning.
+
+How it works:
+
+I used a large Kaggle dataset (Dataset-A) containing real and fake face images.
+
+The dataset split into training, validation, and testing sets.
+
+I trained multiple deep learning models using transfer learning, including:
+
+EfficientNetB0| ResNet50| MobileNetV2
+
+Among these, EfficientNet performed the best and was selected as the final model.
+
+I evaluated the trained model on:
+
+Dataset-A (same distribution)
+
+Dataset-B (a completely different Kaggle dataset)
+
+Generated AI image
+
+I also built an inference script that allows users to upload any image and receive a prediction (Real or Fake).
+
+The entire pipeline was implemented using Python and TensorFlow and was executed using VS Code.
+
+4. Limitations of the Project:
+
+Despite achieving very high accuracy (~99% on EfficientNet) on Dataset-A, the model performed poorly on:
+
+Dataset-B fake images & High-quality Gemini-generated fake images
+
+This happens because the model learned dataset-specific artifacts rather than general fake-face characteristics. While real faces are consistent across datasets, fake faces vary significantly depending on the AI generator used. This limitation highlights a real-world problem in deepfake detection: models often fail to generalize to unseen fake-generation techniques.
+
+5. Tools & Libraries Used: 
+Development Tools: 
+
+VS Code (code editor)
+
+Windows OS
+
+Python
+
+Libraries
+
+TensorFlow / Keras – model training & inference
+
+NumPy – numerical operations
+
+Pandas – dataset handling
+
+Pillow (PIL) – image processing
+
+Scikit-learn – evaluation metrics
+
+Matplotlib – visualization
+
+tqdm – progress tracking
+
+Datasets: 
+
+Kaggle Real vs Fake Faces Dataset (Dataset-A)
+
+Kaggle Real and Fake Face Detection Dataset (Dataset-B)
+
+Custom Gemini-generated fake images
+
+6. One Major Challenge I Faced:
+
+One major challenge was training large deep learning models on limited hardware. Training EfficientNet on the full dataset was computationally expensive and caused high CPU and memory usage. To solve this, I experimented with:
+
+Smaller batch sizes
+
+Partial dataset training
+
+Training on a more powerful system when available
+
+This helped me balance performance and system stability without compromising experimental validity.
+
+7. One Improvement I Made: 
+
+An important improvement I made was cross-dataset evaluation. Instead of only reporting high accuracy on the training dataset, I tested the model on a completely different dataset and on custom-generated images. This revealed the real limitations of the model and made the project more realistic, honest, and research-oriented rather than accuracy-focused.
+
+Conclusion
+
+This project demonstrates that while deep learning models can achieve extremely high accuracy on known datasets, real-world deepfake detection remains a challenging problem due to domain shift and evolving AI-generated content. The project emphasizes the importance of generalization, dataset diversity, and responsible evaluation in AI-based security systems.
